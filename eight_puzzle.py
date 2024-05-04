@@ -1,3 +1,5 @@
+
+import time
 from collections import deque
 import heapq
 
@@ -9,6 +11,7 @@ def uniform_cost_search(start_state, goal_state):
     solution_depth = None
     max_q_size = 0
     expanded_nodes = 0
+    s = time.time()
 
     q.appendleft(start_state)
     visited.add(tuple(start_state))
@@ -27,7 +30,9 @@ def uniform_cost_search(start_state, goal_state):
                 current_state = parent[tuple(current_state)]
             path.reverse()
             solution_depth = len(path) - 1
-            return path, solution_depth, max_q_size, expanded_nodes
+            e = time.time()
+            time_cost = str(round(e-s, 4))
+            return path, solution_depth, max_q_size, expanded_nodes, time_cost
 
         # Expanding
         neighbor_indexes = []
@@ -53,8 +58,9 @@ def uniform_cost_search(start_state, goal_state):
                 expanded = True
         if expanded:
             expanded_nodes += 1
-    
-    return None, solution_depth, max_q_size, expanded_nodes
+    e = time.time()
+    time_cost = str(round(e-s, 4))  
+    return None, solution_depth, max_q_size, expanded_nodes, time_cost
 
 
 def misplaced_tile_heu(state, goal):
@@ -81,6 +87,7 @@ def a_star_search_mp(start_state, goal_state):
     solution_depth = None
     max_q_size = 0
     expanded_nodes = 0
+    s = time.time()
 
     # Initial setup
     heapq.heappush(pq, (0+misplaced_tile_heu(start_state, goal_state), start_state))
@@ -100,7 +107,9 @@ def a_star_search_mp(start_state, goal_state):
                 current_state = parent[tuple(current_state)]
             path.reverse()
             solution_depth = len(path) - 1
-            return path, solution_depth, max_q_size, expanded_nodes
+            e = time.time()
+            time_cost = str(round(e-s, 4))
+            return path, solution_depth, max_q_size, expanded_nodes, time_cost
 
         # Expanding nodes
         zero_index = current_state.index(0)
@@ -130,8 +139,9 @@ def a_star_search_mp(start_state, goal_state):
                 max_q_size = max(max_q_size, len(pq))
         if expanded:
             expanded_nodes += 1
-    
-    return None, solution_depth, max_q_size, expanded_nodes
+    e = time.time()
+    time_cost = str(round(e-s, 4))
+    return None, solution_depth, max_q_size, expanded_nodes, time_cost
 
 def a_star_search_mh(start_state, goal_state):
     pq = []  # Priority queue for A*
@@ -142,6 +152,7 @@ def a_star_search_mh(start_state, goal_state):
     solution_depth = None
     max_q_size = 0
     expanded_nodes = 0
+    s = time.time()
 
     # Initial setup
     heapq.heappush(pq, (0+manhattan_distance_heu(start_state, goal_state), start_state))
@@ -161,7 +172,9 @@ def a_star_search_mh(start_state, goal_state):
                 current_state = parent[tuple(current_state)]
             path.reverse()
             solution_depth = len(path) - 1
-            return path, solution_depth, max_q_size, expanded_nodes
+            e = time.time()
+            time_cost = str(round(e-s, 4))
+            return path, solution_depth, max_q_size, expanded_nodes, time_cost
 
         # Expanding nodes
         zero_index = current_state.index(0)
@@ -192,8 +205,9 @@ def a_star_search_mh(start_state, goal_state):
                 max_q_size = max(max_q_size, len(pq))
         if expanded:
             expanded_nodes += 1
-    
-    return None, solution_depth, max_q_size, expanded_nodes
+    e = time.time()
+    time_cost = str(round(e-s, 4))
+    return None, solution_depth, max_q_size, expanded_nodes, time_cost
 
 
 
@@ -209,9 +223,9 @@ if __name__ == '__main__':
     start_state = [2, 8, 3, 1, 0, 4, 7, 6, 5]
     goal_state = [1, 2, 3, 8, 0, 4, 7, 6, 5]
 
-    # path, depth, q_size, n_expand = uniform_cost_search(start_state, goal_state)
-    # path, depth, q_size, n_expand = a_star_search_mp(start_state, goal_state)
-    path, depth, q_size, n_expand = a_star_search_mh(start_state, goal_state)
+    # path, depth, q_size, n_expand, time_cost = uniform_cost_search(start_state, goal_state)
+    # path, depth, q_size, n_expand, time_cost = a_star_search_mp(start_state, goal_state)
+    path, depth, q_size, n_expand, time_cost = a_star_search_mh(start_state, goal_state)
 
     if path:
         print("Solution Founded!")
@@ -222,3 +236,4 @@ if __name__ == '__main__':
     print(f"Solution depth was {depth}")
     print(f"Number of nodes expanded: {n_expand}")
     print(f"Max queue size: {q_size}")
+    print(f"It costs {time_cost} sec")

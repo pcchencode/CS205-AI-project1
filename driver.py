@@ -45,11 +45,11 @@ def main():
     # solve_puzzle
     goal_state = [1, 2, 3, 4, 5, 6, 7, 8, 0]
     if algorithm_choice == "1":
-        path, depth, q_size, n_expand = uniform_cost_search(puzzle, goal_state)
+        path, depth, q_size, n_expand, time_cost = uniform_cost_search(puzzle, goal_state)
     elif algorithm_choice == "2":
-        path, depth, q_size, n_expand = a_star_search_mp(puzzle, goal_state)
+        path, depth, q_size, n_expand, time_cost = a_star_search_mp(puzzle, goal_state)
     else:
-        path, depth, q_size, n_expand = a_star_search_mh(puzzle, goal_state)
+        path, depth, q_size, n_expand, time_cost = a_star_search_mh(puzzle, goal_state)
 
     if path:
         print("Solution Founded!")
@@ -60,6 +60,7 @@ def main():
     print(f"Solution depth was {depth}")
     print(f"Number of nodes expanded: {n_expand}")
     print(f"Max queue size: {q_size}")
+    print(f"It costs {time_cost} sec")
 
 if __name__ == '__main__':
     main()
