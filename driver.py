@@ -1,7 +1,7 @@
 from eight_puzzle import *
 
 def valid_row(row):
-    #檢查輸入的行是否有效：三個數字且都在0到8之間
+    # Checking whether the length of single row is <=3
     numbers = row.split()
     if len(numbers) != 3:
         return False
