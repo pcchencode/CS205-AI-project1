@@ -55,39 +55,39 @@ Run:
     Expected result:(Suppose we are playing the default puzzle and implement the uniform cost search)
 
     1. Choose the default puzzle
-    ```
-    Welcome to my 8-Puzzle Solver. Type '1' to use a default puzzle, or '2' to create your own.
-    Your choice: 1
-    ```
+        ```
+        Welcome to my 8-Puzzle Solver. Type '1' to use a default puzzle, or '2' to create your own.
+        Your choice: 1
+        ```
 
     2. Choose uniform cost search algorithm
-    ```
-    Select algorithm. (1) for Uniform Cost Search, (2) for the Misplaced Tile Heuristic, or (3) for the Manhattan Distance Heuristic.
-    Your choice: 1
-    ```
+        ```
+        Select algorithm. (1) for Uniform Cost Search, (2) for the Misplaced Tile Heuristic, or (3) for the Manhattan Distance Heuristic.
+        Your choice: 1
+        ```
 
     3. See the simulation result
-    ```
-    Puzzle state:
-    [1, 2, 3]
-    [4, 5, 6]
-    [7, 0, 8]
-    =========
-    Algorithm choice: (1) Uniform Cost Search
-    Solution Founded!
-    [1, 2, 3]
-    [4, 5, 6]
-    [7, 0, 8]
-    =========
-    [1, 2, 3]
-    [4, 5, 6]
-    [7, 8, 0]
-    =========
-    Solution depth was 1
-    Number of nodes expanded: 3
-    Max queue size: 5
-    It costs 0.0001 sec
-    ```
+        ```
+        Puzzle state:
+        [1, 2, 3]
+        [4, 5, 6]
+        [7, 0, 8]
+        =========
+        Algorithm choice: (1) Uniform Cost Search
+        Solution Founded!
+        [1, 2, 3]
+        [4, 5, 6]
+        [7, 0, 8]
+        =========
+        [1, 2, 3]
+        [4, 5, 6]
+        [7, 8, 0]
+        =========
+        Solution depth was 1
+        Number of nodes expanded: 3
+        Max queue size: 5
+        It costs 0.0001 sec
+        ```
 
 Note that the default puzzle is an easy one that only needs one step to be solved.
 
