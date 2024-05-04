@@ -36,8 +36,7 @@ def main():
     print("Select algorithm. (1) for Uniform Cost Search, (2) for the Misplaced Tile Heuristic, or (3) for the Manhattan Distance Heuristic.")
     algorithm_choice = input("Your choice: ")
     
-    # Assuming a function `solve_puzzle` exists in your game logic that takes puzzle state and algorithm choice
-    # For now, we just print the puzzle and choice:
+    # Print the puzzle and choice:
     print("Puzzle state: ")
     print_state_matrix(puzzle)
     if algorithm_choice == "1":
