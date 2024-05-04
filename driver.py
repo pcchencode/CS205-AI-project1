@@ -40,7 +40,12 @@ def main():
     # For now, we just print the puzzle and choice:
     print("Puzzle state: ")
     print_state_matrix(puzzle)
-    print("Algorithm choice:", algorithm_choice)
+    if algorithm_choice == "1":
+        print("Algorithm choice: (1) Uniform Cost Search")
+    elif algorithm_choice == "2":
+        print("Algorithm choice: (2) Misplaced Tile Heuristic")
+    else:
+        print("Algorithm choice: (3) Manhattan Distance Heuristic")
     
     # solve_puzzle
     goal_state = [1, 2, 3, 4, 5, 6, 7, 8, 0]
