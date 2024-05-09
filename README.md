@@ -14,22 +14,27 @@ run:
     Expected result:
     ```
     Solution Founded!
+    The best state to expand with a g(n) = 0 and h(n) = 3 is...
     [2, 8, 3]
     [1, 0, 4]
     [7, 6, 5]
     =========
+    The best state to expand with a g(n) = 1 and h(n) = 3 is...
     [2, 0, 3]
     [1, 8, 4]
     [7, 6, 5]
     =========
+    The best state to expand with a g(n) = 2 and h(n) = 2 is...
     [0, 2, 3]
     [1, 8, 4]
     [7, 6, 5]
     =========
+    The best state to expand with a g(n) = 3 and h(n) = 1 is...
     [1, 2, 3]
     [0, 8, 4]
     [7, 6, 5]
     =========
+    The best state to expand with a g(n) = 4 and h(n) = 0 is...
     [1, 2, 3]
     [8, 0, 4]
     [7, 6, 5]
@@ -131,38 +136,47 @@ Note that the default puzzle is an easy one that only needs one step to be solve
         =========
         Algorithm choice: (2) Misplaced Tile Heuristic
         Solution Founded!
+        The best state to expand with a g(n) = 0 and h(n) = 7 is...
         [1, 3, 6]
         [5, 0, 2]
         [4, 7, 8]
         =========
+        The best state to expand with a g(n) = 1 and h(n) = 7 is...
         [1, 3, 6]
         [5, 2, 0]
         [4, 7, 8]
         =========
+        The best state to expand with a g(n) = 2 and h(n) = 6 is...
         [1, 3, 0]
         [5, 2, 6]
         [4, 7, 8]
         =========
+        The best state to expand with a g(n) = 3 and h(n) = 5 is...
         [1, 0, 3]
         [5, 2, 6]
         [4, 7, 8]
         =========
+        The best state to expand with a g(n) = 4 and h(n) = 4 is...
         [1, 2, 3]
         [5, 0, 6]
         [4, 7, 8]
         =========
+        The best state to expand with a g(n) = 5 and h(n) = 3 is...
         [1, 2, 3]
         [0, 5, 6]
         [4, 7, 8]
         =========
+        The best state to expand with a g(n) = 6 and h(n) = 2 is...
         [1, 2, 3]
         [4, 5, 6]
         [0, 7, 8]
         =========
+        The best state to expand with a g(n) = 7 and h(n) = 1 is...
         [1, 2, 3]
         [4, 5, 6]
         [7, 0, 8]
         =========
+        The best state to expand with a g(n) = 8 and h(n) = 0 is...
         [1, 2, 3]
         [4, 5, 6]
         [7, 8, 0]
@@ -170,7 +184,7 @@ Note that the default puzzle is an easy one that only needs one step to be solve
         Solution depth was 8
         Number of nodes expanded: 16
         Max queue size: 15
-        It costs 0.0014 sec
+        It costs 0.0005 sec
         ```
 
 # 🥳 Hope you have fun:)
