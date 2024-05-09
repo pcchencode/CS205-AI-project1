@@ -48,16 +48,20 @@ def main():
     
     # solve_puzzle
     goal_state = [1, 2, 3, 4, 5, 6, 7, 8, 0]
+    gh_map = None
     if algorithm_choice == "1":
         path, depth, q_size, n_expand, time_cost = uniform_cost_search(puzzle, goal_state)
     elif algorithm_choice == "2":
-        path, depth, q_size, n_expand, time_cost = a_star_search_mp(puzzle, goal_state)
+        path, depth, q_size, n_expand, time_cost, gh_map = a_star_search_mp(puzzle, goal_state)
     else:
-        path, depth, q_size, n_expand, time_cost = a_star_search_mh(puzzle, goal_state)
+        path, depth, q_size, n_expand, time_cost, gh_map = a_star_search_mh(puzzle, goal_state)
 
     if path:
         print("Solution Founded!")
         for state in path:
+            if gh_map:
+                g, h = gh_map[tuple(state)]
+                print(f"The best state to expand with a g(n) = {g} and h(n) = {h} is...")
             print_state_matrix(state)
     else:
         print("No Solution")
