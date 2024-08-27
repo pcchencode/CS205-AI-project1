@@ -188,3 +188,4 @@ Note that the default puzzle is an easy one that only needs one step to be solve
         ```
 
 # 🥳 Hope you have fun:)
+###
